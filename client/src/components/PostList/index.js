@@ -18,11 +18,11 @@ export default function PostList (){
         dispatch(actions.getPosts.getPostsRequest());
     }, [dispatch]);
 
-    let randomPost = Math.floor(Math.random()*10)
+    let randomPost = Math.floor(Math.random()*posts.length);
     return (
         <Grid container spacing={2} alignItems='stretch'>
-            <Grid item xs={12} sm={6}>
-                {posts.filter(post => posts.indexOf(post) % 5 == randomPost).map(post => <Post key={post._id} post={post}/>)}
+            <Grid item xs={12} sm={12}>
+                {posts.filter(post => posts.indexOf(post) == randomPost).map(post => <Post key={post._id} post={post}/>)}
             </Grid>
             
         </Grid>

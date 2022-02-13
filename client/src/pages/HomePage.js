@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Container, Fab } from '@material-ui/core'; //UI
 import AddIcon from '@material-ui/icons/Add';
 import Header from '../components/Header';
@@ -19,12 +19,18 @@ export default function HomePage() {
         dispatch(showModal());
     }, [dispatch]);
 
+    const [rPost, setrPost] = useState(0);
+
+    const resetPost = () => {
+        setrPost(Math.random());
+    };
+
     return (
         
         <Container maxWidth="lg" className={classes.container}>
             <Header />
-            <img src={h4} className={classes.image}/>
-            <PostList />
+            <img src={h4} className={classes.image} onClick={resetPost}/>
+            <PostList resetPost={rPost}/>
             <CreatePostModal />
             <Fab 
                 color='primary' 

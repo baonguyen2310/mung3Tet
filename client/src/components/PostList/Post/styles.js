@@ -3,7 +3,7 @@ import './style.css';
 
 export default makeStyles(() => ({
     media: {
-        height: 150
+        height: 200
     },
     title: {
 

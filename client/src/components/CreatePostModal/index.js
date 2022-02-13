@@ -18,7 +18,6 @@ import h0 from '../../assets/h10.png';
 
 export default function CreatePostModal(){
     const { isShow } = useSelector(modalState$);
-    console.log({isShow});
 
     const classes = useStyles();
 
@@ -39,12 +38,16 @@ export default function CreatePostModal(){
     }, [dispatch]);
 
     const onSubmit = React.useCallback(() => {
-        dispatch(createPost.createPostRequest(data))
+        dispatch(createPost.createPostRequest(data));
+        alert('đã gửi...');
     }, [data, dispatch]);
 
     let randomImage = 'h' + Math.floor(Math.random() * 9);
     if (randomImage =='h0') {
         randomImage = h0
+    }
+    else if (randomImage =='h1') {
+        randomImage = h1
     }
     else if (randomImage =='h2') {
         randomImage = h2

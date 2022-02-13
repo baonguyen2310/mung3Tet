@@ -25,19 +25,15 @@ export default function Post({post}){
 
     return (
         <Card>
-            <CardHeader avatar={<Avatar>A</Avatar>}
-                title={post.author}
+            <CardHeader avatar={<Avatar>CB</Avatar>}
+                title='Một lá thư trong vườn ...'
                 subheader={moment(post.updatedAt).format('HH:MM MMM DD, YYYY')}
-                action={
-                    <IconButton>
-                        <MoreVertIcon></MoreVertIcon>
-                    </IconButton>
-                }
+                
             />
             <CardMedia image={post.attachment} title="Title" className={classes.media} />
             <CardContent>
                 <Typography variant="h5" color="textPrimary" className="classes.title">{post.title}</Typography>
-                <Typography variant="body2" component="p" color="textSecondary" className="classes.content">
+                <Typography witdh="100%" variant="body2" paragraph color="textSecondary" className="classes.content">
                     {post.content}
                 </Typography>
             </CardContent>
